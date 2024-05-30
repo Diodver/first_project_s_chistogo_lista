@@ -1,9 +1,9 @@
 body {
-    margin: 0;
-    background-color: #1e1e1e;
-    font-family: Inter, sans-serif;
-    font-weight: 400;
-    color: #fff;
+    margin: 0; /* убрал отступы */
+    background-color: #1e1e1e; /* сделал темный фон */
+    font-family: Inter, sans-serif; /* указал используыемый в основном шрифт на странице */
+    font-weight: 400; /* указал ширину шрифта */
+    color: #F5F5F5;
 }
 
 h1,
@@ -16,78 +16,229 @@ p,
 ul,
 ol,
 blockquote {
-    margin: 0;
-    padding: 0;
+    margin: 0; /* обнулил отступы браузера  */
+    padding: 0; /* обнулил отступы браузера */
 }
 
 .content-section {
-    width: 100%;
-    box-sizing: border-box;
-    max-width: 360px;
-    min-height: 100px;
-    margin: auto;
+    width: 100%; 
+    box-sizing: border-box; /* учитываение padding и border */
+    max-width: 360px; /* задал максимальную ширину */
+    min-height: 100px; /* задал минимальную высоту */
+    margin: auto; /* дал возможность забирать все возможное оставшееся пространство */
 }
 
 .content-section_theme_dark {
-    background-color: #131313;
-    color: #FFF;
+    background-color: #131313; /* указал цвет фона для секций */
+    color: #F5F5F5; /* указал цвет шрифта для секций */
 }
 
 .content-section_theme_bright {
-    background-color: #FEE42A;
-    color: #131313;
+    background-color: #FEE42A; /* указал цвет фона для секций */
+    color: #131313; /* указал цвет шрифта для секций */
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 24px 20px;
+    display: flex; /* флексим нашей разметкой ^-^ */
+    justify-content: space-between; /* равномерно распределил вдоль главной оси первый элемент в начала второй в конце*/
+    align-items: flex-start; /* выровнил флекс элементы в начале поперечной оси*/
+    padding: 24px 20px; /* задал отступы */
 }
 
 .header__logo {
-    display: block;
-    width: 78px;
+    display: block; /* сделал логотип блочным*/
+    width: 78px; /* указал ширину для логотипа */
 }
 
 .header__logo-image{
-    width: 100%;
+    width: 100%; /* задал ширину использование от header__logo */
 }
 
 .header__menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    list-style: none;
+    display: flex; /* флексим нашей разметкой ^-^ */
+    flex-direction: column; /* задал меню основную ось сверху вниз */
+    gap: 12px; /* задал отступы между колонками и рядами */
+    list-style: none; /* отключил метки меню (точки) */
 }
 
 .header__menu-link {
-    color: #fff;
-    font-size: 16px;
-    line-height: 1.2;
+    color: #F5F5F5; /* цвет шрифта */
+    font-size: 16px; /* размер шрифта */
+    line-height: 1.2; /* высота строки */
 }
 
 .header__menu-item_active .header__menu-link {
-    text-decoration: none;
+    text-decoration: none; /* отключил подчеркивание у активных ссылок меню */
 }
 
 .cover {
-    padding: 7px 24px 30px 20px;
+    min-height: 258px; /* задал минимальную высоту */
+    padding: 7px 24px 30px 20px; /* задал отступы блоку */
+    background-image: url(/images/cover.svg); /* подгрузка фона */
+    background-position: right center; /* отцентрировал по правому краю наш фон */
+    background-size: 95% auto; /* размер фона */
+    background-repeat: no-repeat; /* отключил повторение */
+}
+
+.cover__title {
+    width: 100%;
+    color: #fff; /* цвет текста */
+    font-family: "EB Garamond", serif; /* шрифт из font.css и указал на случай если не загрузит наш шрифт */
+    font-weight: 400; /* ширина шрифта */
+    font-size: 72px; /* размер шрифта */
+    line-height: 1; /* высота строки */
+}
+
+.accent-span {
+    display: block;
+}
+
+.text-center {
+    text-align: center; /* отцентрировал текст по центру */
+}
+
+.text-right {
+    text-align: right; /* отцентрировал текст по правому краю */
 }
 
 .intro {
-    padding: 0 20px 38px;
+    display: flex; /* флексим нашей разметкой ^-^ */
+    flex-direction: column; /* задал основную ось сверху вниз для всего интро */
+    gap: 24px; /* задал отступы между колонками и рядами */
+    padding: 0 20px 38px; /* задал отступы блоку */
+}
+
+.intro__heading {
+    display: flex; /* флексим нашей разметкой ^-^ */
+    justify-content: space-between; /* равномерно распределил вдоль главной оси первый элемент в начала второй в конце*/
+    gap: 22px; /* задал отступы между колонками и рядами */
+    font-size: 16px; /* размер шрифта */
+    color: #CCC; /* цвет текста */
+}
+
+.intro__title {
+    font-weight: 400; /* ширина шрифта */
+    font-size: 16px; /* размер шрифта */
+    line-height: 1.2; /* высота строки */
+}
+
+.intro__date {
+    font-size: 16px; /* размер шрифта */
+    line-height: 1.2; /* высота строки */
+    white-space: nowrap; /*предназначен что бы не переносился текст (рекомендации использовать для телефон, дата, почта)*/
+}
+
+.intro__main-text{
+    display: flex; /* флексим нашей разметкой ^-^ */
+    flex-direction: column; /* задал основную ось сверху вниз */
+    gap: 24px; /* задал отступы между колонками и рядами */
+    color: #F5F5F5; /* цвет текста */
+    font-size: 16px; /* размер шрифта */
+    line-height: 1.2; /* высота строки */
 }
 
 .reasons {
-    padding: 40px 20px;
+    display: flex; /* флексим нашей разметкой ^-^ */
+    flex-direction: column; /* задал основную ось сверху вниз */
+    gap: 32px; /* задал отступы между колонками и рядами */
+    padding: 40px 20px; /* задал отступы блоку */
+}
+
+.content-section__subtitle {
+    font-family: "EB Garamond", serif; /* шрифт из font.css и указал на случай если не загрузит наш шрифт */
+    font-weight: 500; /* ширина шрифта */
+    font-size: 28px; /* размер шрифта */
+    line-height: 1.15; /* высота строки */
+}
+
+.content-section__introduction {
+    font-size: 20px; /* размер шрифта */
+    line-height: 1.35; /* высота строки */
+}
+
+.content-section__list {
+    display: flex; /* флексим нашей разметкой ^-^ */
+    flex-direction: column; /* задал основную ось сверху вниз */
+    gap: 16px; /* задал отступы между колонками и рядами */
+    padding: 0 0 0 16px; /* задал отступ слева для списка */
+    font-size: 16px; /* размер шрифта */
+    font-weight: 400; /* ширина шрифта */
+    line-height: 1.35; /* высота строки */
+}
+
+.content-section__list-accent {
+    font-weight: 700; /* ширина шрифта */
 }
 
 .how-to {
-    padding: 40px 20px 60px;
+    display: flex; /* флексим нашей разметкой ^-^ */
+    flex-direction: column; /* задал основную ось сверху вниз */
+    gap: 32px; /* задал отступы между колонками и рядами */
+    padding: 40px 20px 60px; /* задал отступы блоку */
+}
+
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    list-style: none;
+}
+
+.card_theme_dark {
+    background-color: #343434;
+}
+
+.card_theme_bright {
+    color: #131313;
+    background-color: #FEE42A;
+}
+
+.card {
+    border-radius: 30px; /* скруглил углы у обводки */
+    padding: 20px; /* задал отступы внутри карточки */
+}
+
+.card__author-photo {
+    display: block;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.card__author-name {
+    margin: 8px 0 0;
+    font-weight: 700;
+}
+
+.card__title {
+    margin: 8px auto;
+    font-family: "EB Garamond", serif; /* шрифт из font.css и указал на случай если не загрузит наш шрифт */
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.35;
+}
+
+.card__text {
+    font-size: 16px;
+    line-height: 21.6px;
 }
 
 .footer {
-    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #FEE42A;
+    padding: 20px; /* задал отступы блоку */
 }
 
+.footer__links {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+}
+
+.footer__links a {
+    color: #F5F5F5;
+    font-size: 14px;
+    line-height: 1.25;
+    text-decoration: none;
+}
